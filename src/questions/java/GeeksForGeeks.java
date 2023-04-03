@@ -6,10 +6,30 @@ public class GeeksForGeeks {
     private static final int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     public static void main(String[] args) {
-        reverseArray(array);
+        getFrequencyOfPattern("dhimanman", "man");
     }
 
-    public static void reverseArray(int[] array) {
+    // Difficulty: Medium
+    private static void getFrequencyOfPattern(String text, String pattern) {
+        int count = 0;
+
+        for (int i = 0; i <= text.length() - pattern.length(); i++) {
+            int j;
+            for (j = 0; j < pattern.length(); j++) {
+                if (text.charAt(i + j) != pattern.charAt(j)) {
+                    break;
+                }
+            }
+
+            if (j == pattern.length()) {
+                count++;
+            }
+        }
+
+        System.out.println("Frequency: " + count);
+    }
+
+    private static void reverseArray(int[] array) {
         System.out.println("Original Array: " + Arrays.toString(array));
 /*        // Using a temporary array
         int[] tempArray = new int[array.length];
@@ -30,7 +50,7 @@ public class GeeksForGeeks {
         System.out.println("\nReversed Array: " + Arrays.toString(array));
     }
 
-    public static void swapTwoNumbers(int a, String b) {
+    private static void swapTwoNumbers(int a, String b) {
         int x = 5;
         int y = 7;
         System.out.printf("Before Swapping: X = %d, Y = %d", x, y);

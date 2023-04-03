@@ -9,10 +9,12 @@ public class Sorting {
         insertionSort();
     }
 
-    private static void insertionSort() {
+    // TODO: Merge Sort
+
+    public static void insertionSort() {
         System.out.println("Before Sorting: " + Arrays.toString(unsortedArray));
 
-        for (int i = 0; i < unsortedArray.length; i++) {
+        for (int i = 1; i < unsortedArray.length; i++) {
             int temp = unsortedArray[i];
             for (int j = i - 1; j >= 0; j--) {
                 if (unsortedArray[j] > temp) {
@@ -27,7 +29,7 @@ public class Sorting {
         System.out.println("\nAfter Sorting: " + Arrays.toString(unsortedArray));
     }
 
-    private static void selectionSort() {
+    public static void selectionSort() {
         System.out.println("Before Sorting: " + Arrays.toString(unsortedArray));
 
         for (int i = 0; i < unsortedArray.length - 1; i++) {
