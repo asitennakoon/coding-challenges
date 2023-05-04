@@ -6,7 +6,8 @@ public class GeeksForGeeks {
     private static final int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
     public static void main(String[] args) {
-        getFrequencyOfPattern("dhimanman", "man");
+        System.out.println(isPalindrome("abba"));
+        System.out.println(isPalindrome("geeks"));
     }
 
     // Difficulty: Medium
@@ -70,4 +71,36 @@ public class GeeksForGeeks {
         x = x - y;
         System.out.printf("%nAfter Swapping: X = %d, Y = %d", x, y);
     }
+
+    private static boolean isPalindrome(String value) {
+        char[] charArray = value.toCharArray();
+
+        // Naive
+        /*if (charArray.length <= 2) {
+            return true;
+        } else {
+            for (int i = 0; i < charArray.length / 2; i++) {
+                if (charArray[i] != charArray[charArray.length - i - 1]) {
+                    return false;
+                }
+            }
+        }
+
+        return true;*/
+
+        int i = 0;
+        int j = charArray.length - 1;
+
+        while (i < j) {
+            if (charArray[i] != charArray[j]) {
+                return false;
+            }
+
+            i++;
+            j--;
+        }
+
+        return true;
+    }
+
 }
